@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Level 1: Kuis Kebucinan</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>LEVEL 1 (KE ABSURD-AN)</h1>
+        
+        <p>Anda harus menjawab: **Kapan saya terlihat paling tidak bisa hidup tanpa kamu?**</p>
+        
+        <img src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExbzdvcjZxMTBtZGY1NnRvM29jOXlzeGd5a3ZyZ3I0azZpdTRtNG9yMiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/jZxeUsLnXYdO0/giphy.gif" alt="GIF Kucing Bucin Melayang" class="gif-utama">
+        
+        <div id="quiz-options">
+            <button class="tombol opsi-kuis" onclick="displayResult(false)">A. Saat gak bisa ketemu?.</button>
+            <button class="tombol opsi-kuis" onclick="displayResult(false)">B. Saat kamu ngambek 1 detik?.</button>
+            <button class="tombol opsi-kuis" onclick="displayResult(true)">C. Setiap detik, terutama saat saya kangen?.</button>
+        </div>
+
+        <div id="result-message" style="display:none;">
+            <div class="catatan-penting" id="message-text"></div>
+            <a id="next-button" href="level2.html" class="tombol" style="display:none;">Lanjut ke Level 2 (Kekonyolan) 🤡</a>
+        </div>
+    </div>
+
+    <script>
+        function displayResult(isCorrect) {
+            const resultMessage = document.getElementById('result-message');
+            const messageText = document.getElementById('message-text');
+            const nextButton = document.getElementById('next-button');
+            const quizOptions = document.getElementById('quiz-options');
+            
+            quizOptions.style.display = 'none';
+            resultMessage.style.display = 'block';
+
+            if (isCorrect) {
+                messageText.innerHTML = "✅ BENAR! Jawabannya adalah **Setiap Detik!** Status Anda berhasil diverifikasi. Lanjut!";
+            } else {
+                messageText.innerHTML = "❌ SALAH TOTAL! Jawaban saya selalu **Setiap Detik!** Tapi karena saya sudah terlanjur sayang, Anda Lolos ke level selanjutnya.";
+            }
+            nextButton.style.display = 'block';
+        }
+    </script>
+</body>
+</html>

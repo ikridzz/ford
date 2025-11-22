@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Level 2: Deteksi Ke Absurd-an</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>LEVEL 2: DETEKSI TINGKAT KE ABSURD-AN</h1>
+
+        <p>Lihat 2 foto kita di bawah. **Pilih Foto Mana Saya Terlihat Paling Berkenang?** (Hati-hati, ini jebakan!).
+        </p>
+
+        <div class="photo-grid">
+            <img src="asset/1.jpg" onclick="showFeedback('A')">
+            <img src="asset/4.jpg" onclick="showFeedback('B')">
+            <img src="asset/5.jpg" onclick="showFeedback('C')">
+            <img src="asset/7.jpg" onclick="showFeedback('D')">
+            <img src="asset/8.jpg" onclick="showFeedback('E')">
+            <img src="asset/9.jpg" onclick="showFeedback('F')">
+        </div>
+
+        <div id="feedback-area" style="display:none;">
+            <img id="feedback-gif"
+                src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExOG4wMjdyYXRmZjVibmphdWw2M3pieTc4a2Vxb2Z2ZDh2OWpoeXkwOSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/7SfAXqgRgh0li/giphy.gif"
+                alt="GIF Tertawa Konyol" class="gif-utama">
+            <div class="catatan-penting" id="feedback-text"></div>
+            <a href="surprise.html" class="tombol" style="background-color: #00ff80;">ACCESS GRANTED! FINAL REVEAL!</a>
+        </div>
+
+    </div>
+
+    <script>
+        function showFeedback(selection) {
+            const feedbackArea = document.getElementById('feedback-area');
+            const feedbackText = document.getElementById('feedback-text');
+            const photoGrid = document.querySelector('.photo-grid');
+
+            photoGrid.style.display = 'none';
+            feedbackArea.style.display = 'block';
+
+            if (selection === 'A') {
+                feedbackText.innerHTML = "SALAH! Anda tidak bisa memilih di antara ini! Semua foto kita **Sangat Berkenang** Mission Passed! .👌😎";
+            } else {
+                feedbackText.innerHTML = "SALAH! Semuanya adalah sangat berkenang. Karena Anda sudah mengakuinya, Anda lolos! 👌👌(❁´◡`❁)";
+            }
+        }
+    </script>
+</body>
+
+</html>
